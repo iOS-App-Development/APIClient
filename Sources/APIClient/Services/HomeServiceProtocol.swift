@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol HomeServiceProtocol {
-    func getMoviePopularList() ->Swift.Result<[RootResult], Error>?
+    func getMoviePopularList(completion: @escaping (_ result:Swift.Result<[RootResult], Error>?) -> Void)
     func getTrendingMovieList(byFilter:String) -> Swift.Result<[RootResult], Error>?//today/week
     func getMovieDetail(id:String) -> Swift.Result<MovieDetail, Error>?
     func searchMovie(byFilter:String) -> Swift.Result<[RootResult], Error>?
