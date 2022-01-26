@@ -8,23 +8,22 @@
 import Foundation
 
 public protocol HomeServiceProtocol {
-    func getMoviePopularList() ->[RootResult]?
-    func getTrendingMovieList(byFilter:String) -> [RootResult]? //today/week
-    func getMovieDetail(id:String) -> MovieDetail?
-    func searchMovie(byFilter:String) -> [RootResult]?
+    func getMoviePopularList() ->Swift.Result<[RootResult], Error>?
+    func getTrendingMovieList(byFilter:String) -> Swift.Result<[RootResult], Error>?//today/week
+    func getMovieDetail(id:String) -> Swift.Result<MovieDetail, Error>?
+    func searchMovie(byFilter:String) -> Swift.Result<[RootResult], Error>?
     
-    func getMovieKeywords(byFilter:String) -> [Keyword]?
-    func getMovieCast(byFilter:String) -> [Cast]?
-    func getMovieRecommendations(byFilter:String) -> [RootResult]?
-    func getMovieMedia(byFilter:String) -> [Backdrop]?
+    func getMovieKeywords(byFilter:String) -> Swift.Result<[Keyword], Error>?
+    func getMovieCast(byFilter:String) ->  Swift.Result<[Cast], Error>?
+    func getMovieRecommendations(byFilter:String) -> Swift.Result<[RootResult], Error>?
+    func getMovieMedia(byFilter:String) -> Swift.Result<[Backdrop], Error>?
 
     
 
-    func getTVPopularList() ->[String]?
-    func getTVMovieList(byFilter:String) -> [String]? //today/week
-    func getTVDetail(id:String) -> String?
-    func searchTV(byFilter:String) -> [String]?
-    
+    func getTVPopularList() -> Swift.Result<[String], Error>?
+    func getTVMovieList(byFilter:String) -> Swift.Result<[String], Error>? //today/week
+    func getTVDetail(id:String) -> Swift.Result<[String], Error>?
+    func searchTV(byFilter:String) -> Swift.Result<[String], Error>?
     
     
 }
