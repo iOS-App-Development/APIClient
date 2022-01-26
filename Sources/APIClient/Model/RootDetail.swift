@@ -6,10 +6,10 @@ import Foundation
 
 public struct RootDetail : Codable {
 
-	let page : Int?
-	let results : [RootResult]?
-	let totalPages : Int?
-	let totalResults : Int?
+    public let page : Int?
+	public let results : [RootResult]?
+    public let totalPages : Int?
+    public let totalResults : Int?
 
 
 	enum CodingKeys: String, CodingKey {
